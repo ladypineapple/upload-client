@@ -10,7 +10,7 @@ const handleUrlEncoded = (event) => {
 
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: 'http://httpbin.org/post',
+      url: 'http://localhost:3000/uploads',
       method: 'POST',
       data,
       success (data) {
@@ -33,7 +33,7 @@ const handleMultiPartFormData = (event) => {
 
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: 'http://httpbin.org/post',
+      url: 'http://localhost:3000/uploads',
       method: 'POST',
       data,
       contentType: false,
