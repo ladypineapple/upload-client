@@ -1,7 +1,38 @@
 'use strict';
 
-// user require with a reference to bundle the file and use it in this file
-// var example = require('./example');
+const getFormFields = require('../../lib/get-form-fields');
 
-// use require without a reference to ensure a file is bundled
-require('./example');
+const handleUrlEncoded = function(event){
+  event.preventDefault();
+
+  let data = getFormFields(event.target);
+  console.log("handleUrlEncoded ran, and data is ", data);
+
+  return $.ajax({
+    url: 'http://localhost:4741',
+    method: 'POST',
+    data,
+  });
+};
+
+const handleMultiPartFormData = function(event){
+  event.preventDefault();
+
+  let data = new FormData(event.target);
+  console.log("handleMultipartFormData ran, and data is ", data);
+
+  return $.ajax({
+    url: 'http://localhost:4741/uploads',
+    method: 'POST',
+    data,
+    contentType: false,
+    processData: false,
+  });
+};
+
+
+
+$(()=>{
+  $('#application-x-www-form-data').on('submit', handleUrlEncoded);
+  $('#multipart-form-data').on('submit', handleMultiPartFormData);
+});
