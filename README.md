@@ -23,8 +23,9 @@ By the end of this, developers should be able to:
 ## Introduction
 
 This repo is part of the `browser-upload` sequence. If you came here first,
-you likely want to go check out [this repo](https://github.com/ga-wdi-boston/browser-upload), and come back when
-prompted
+you likely want to go check out [browser-upload repo](https://github.com/ga-wdi-boston/browser-upload), and come back when
+prompted. The api that we'll eventually use with this client is
+[express-api-upload](https://github.com/ga-wdi-boston/express-api-upload).
 
 ## Discussion
 
